@@ -16,5 +16,5 @@ interface PostRepository {
     // local
     suspend fun savePostList(list: List<Post>)
     suspend fun clearData()
-
+    fun getAllLocalPosts(): Flow<List<Post>>
 }

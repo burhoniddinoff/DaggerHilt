@@ -66,9 +66,9 @@ class PostRepositoryImpl @Inject constructor(
         dao.clearData()
     }
 
-/*    override fun getAllLocalPosts(): Flow<List<Post>> = flow {
+    override fun getAllLocalPosts(): Flow<List<Post>> = flow {
         dao.getLocalPostList().collect { post ->
             emit(post.map { it.toPost() })
         }
-    }*/
+    }
 }
