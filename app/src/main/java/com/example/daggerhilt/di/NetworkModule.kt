@@ -1,6 +1,8 @@
 package com.example.daggerhilt.di
 
 import com.example.daggerhilt.network.ApiService
+import com.example.daggerhilt.repository.PostRepository
+import com.example.daggerhilt.repository.PostRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -39,5 +41,9 @@ object NetworkModule {
             .build()
     }
 
-
+    @Singleton
+    @Provides
+    fun providePostRepository(apiService: ApiService): PostRepository {
+        return PostRepositoryImpl(apiService)
+    }
 }
