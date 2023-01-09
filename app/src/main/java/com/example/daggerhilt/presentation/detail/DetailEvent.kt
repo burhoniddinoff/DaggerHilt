@@ -1,4 +1,6 @@
 package com.example.daggerhilt.presentation.detail
 
-class DetailEvent {
+sealed class DetailEvent {
+    data class OnGetOnePost(val id: Int): DetailEvent()
+    data class OnDelete(val id: Int): DetailEvent()
 }

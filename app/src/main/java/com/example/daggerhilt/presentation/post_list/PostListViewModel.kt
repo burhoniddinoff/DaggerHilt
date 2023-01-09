@@ -2,7 +2,6 @@ package com.example.daggerhilt.presentation.post_list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.daggerhilt.model.Post
 import com.example.daggerhilt.repository.PostRepository
 import com.example.daggerhilt.util.NetworkHelper
 import com.example.daggerhilt.util.Response
@@ -22,10 +21,10 @@ class PostListViewModel @Inject constructor(
     val state: StateFlow<PostListState> get() = _state
 
     init {
-        getAllPost()
+        getAllPosts()
     }
 
-    private fun getAllPost() {
+    private fun getAllPosts() {
         viewModelScope.launch {
             if (helper.isNetworkConnected()) {
                 repository.getAllRemotePosts().collect { response ->
@@ -58,5 +57,4 @@ class PostListViewModel @Inject constructor(
             }
         }
     }
-
 }

@@ -1,5 +1,6 @@
 package com.example.daggerhilt.util
 
+import com.example.daggerhilt.database.PostEntity
 import com.example.daggerhilt.model.Post
 
 fun Post.toPostEntity(): PostEntity {

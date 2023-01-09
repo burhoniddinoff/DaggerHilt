@@ -4,6 +4,7 @@ import com.example.daggerhilt.model.Post
 import com.example.daggerhilt.util.Response
 import kotlinx.coroutines.flow.Flow
 
+
 interface PostRepository {
     // remote
     suspend fun getAllRemotePosts(): Flow<Response<List<Post>>>
@@ -15,5 +16,5 @@ interface PostRepository {
     // local
     suspend fun savePostList(list: List<Post>)
     suspend fun clearData()
-    fun getAllLocalPosts(): Flow<List<Post>>
+
 }
